@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Привет, Никита, <br> у вас <span id="taskCount">0</span> задач</h1>
+        </div>
+    
+        <div class="content">
+            <div class="button-container-main">
+                <a href="order.html" class="button-main" onclick="switchTab('task')">Задачи</a>
+                <a href="main.html" class="button-main" onclick="switchTab('incident')">Инциденты</a>
+            </div>
+    
+            <input type="text" placeholder="Сотрудник">
+            
+            <div class="content-two content-one">
+                <label for="taskTitle">Задача:</label>
+                <input type="text" id="taskTitle" placeholder="Наименование задачи">
+            </div>
+            <div class="content-one content-op">
+                <label for="taskDescription">Описание:</label>
+                <input type="text" id="taskDescription" placeholder="Напишите краткое описание задачи">
+    
+            </div>
+            
+                <div class="content-two content-data">
+                    <label for="deadline">Deadline:</label>
+                    <input type="datetime-local" id="deadline">
+                </div>
+            
+            <div class="content-one">
+                <input type="text" placeholder="Статус">
+                <input type="text" placeholder="%">
+                <input type="text" placeholder="Приоритет">
+
+            </div>
+            <div class="content-name">
+                <p>Назначить новую задачу?</p>
+            </div>
+
+            <div class="content-one">
+                <div class="content-radio">
+                    <label for="yes">Да</label>
+                    <input type="radio" id="yes" name="assign" value="yes">
+                </div>
+                <div class="content-radio">
+                    <label for="no">Нет</label>
+                    <input type="radio" id="no" name="assign" value="no">
+                </div>
+            </div>
+           
+            <div class="content-button">
+                <button class="button button-input" onclick="updateTask()">Обновить</button>
+            </div>
+            <div id="notification" class="notification">Задача добавлена!</div>
+        </div>
+    </div>
+    
+    <script>
+        function switchTab(tabName) {
+            console.log(`Переключение на вкладку: ${tabName}`);
+        }
+
+        function updateTask() {
+            var taskCountElement = document.getElementById("taskCount");
+            var notificationElement = document.getElementById("notification");
+
+            // Замените следующую строку кодом для увеличения счетчика задач
+            var newTaskCount = parseInt(taskCountElement.innerText) + 1;
+            taskCountElement.innerText = newTaskCount;
+
+            // Показываем уведомление
+            notificationElement.style.display = "block";
+
+            // Через 3 секунды скрываем уведомление
+            setTimeout(function () {
+                notificationElement.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

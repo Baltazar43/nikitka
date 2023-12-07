@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя страница</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Привет, Никита, <br> у вас <span id="taskCount">0</span> задач</h1>
+        </div>
+    
+        <div class="content">
+            <div class="button-container-main">
+                <a href="order.html" class="button-main" onclick="switchTab('task')">Задачи</a>
+                <a href="main.html" class="button-main" onclick="switchTab('incident')">Инциденты</a>
+            </div>
+    
+            <input type="text" placeholder="Сотрудник">
+
+            <input type="text">
+    
+            <!-- Дополнительное содержимое страницы -->
+        </div>
+
+    </div>
+    
+
+    <script>
+        function switchTab(tabName) {
+            // Здесь вы можете добавить код для переключения между вкладками
+            console.log(`Переключение на вкладку: ${tabName}`);
+        }
+    </script>
+</body>
+</html>
